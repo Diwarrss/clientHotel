@@ -1,31 +1,41 @@
 {
-  "name": "clientHotel",
+  "name": "coreui",
   "version": "1.0.0",
-  "description": "Aplicación para administración de Hoteles",
-  "author": "GridSoft",
+  "description": "referensi admin template",
+  "author": "imam",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
   },
   "dependencies": {
-    "nuxt": "^2.0.0",
-    "element-ui": "^2.4.11",
-    "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/pwa": "^3.0.0-0",
-    "@nuxtjs/dotenv": "^1.4.0"
+    "@nuxtjs/axios": "^5.10.3",
+    "bootstrap": "^4.5.0",
+    "bootstrap-vue": "^2.14.0",
+    "chart.js": "^2.9.3",
+    "cross-env": "^5.2.1",
+    "node-sass": "^4.11.0",
+    "nuxt": "^2.12.2",
+    "nuxt-sass-resources-loader": "^2.0.5",
+    "nuxt-simple-line-icons": "^1.0.2",
+    "nuxt-validate": "^0.1.3",
+    "sass-loader": "^7.3.1",
+    "vue-chartjs": "^3.5.0",
+    "vue-flag-icon": "^1.0.6",
+    "vue2-perfect-scrollbar": "^1.5.0"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^2.0.0",
-    "@nuxtjs/eslint-module": "^1.0.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^6.1.0",
-    "eslint-plugin-nuxt": ">=0.4.2",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1"
+    "babel-eslint": "^8.2.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^3.6.0",
+    "eslint-loader": "^2.2.1",
+    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-vue": "^4.0.0",
+    "nodemon": "^1.19.4",
+    "prettier": "1.14.3"
   }
 }
