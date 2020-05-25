@@ -2,7 +2,10 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
+  server: {
+    port: 8080, // default: 3000
+    host: 'localhost' // default: localhost
+  },
   /*
   ** Headers of the page
   */
@@ -15,7 +18,10 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.7.2/css/all.css' }
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.7.2/css/all.css'
+      }
     ]
   },
 
@@ -50,13 +56,46 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    //Auth Module
+    '@nuxtjs/auth'
   ],
+  auth: {
+    // Options
+    redirect: {
+      login: '/pages/login',
+      logout: '/pages/login',
+      callback: '/pages/login',
+      home: '/'
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: 'login',
+            method: 'post',
+            propertyName: false
+          }, //url login laravel 7
+          user: {
+            url: 'api/user',
+            method: 'get',
+            propertyName: false
+          } //url get info user auth
+        },
+        tokenRequired: false,
+        tokenType: false
+      }
+    },
+    localStorage: false
+  },
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: 'http://localhost:8000',
+    /*decimos que las credenciales sean true*/
+    credentials: true
   },
 
   /*

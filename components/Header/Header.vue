@@ -1,17 +1,17 @@
 <template>
   <header class="app-header navbar">
-    <button 
-      class="navbar-toggler mobile-sidebar-toggler d-lg-none" 
-      type="button" 
+    <button
+      class="navbar-toggler mobile-sidebar-toggler d-lg-none"
+      type="button"
       @click="mobileSidebarToggle" >
       <span class="navbar-toggler-icon" />
     </button>
-    <b-link 
-      class="navbar-brand" 
+    <b-link
+      class="navbar-brand"
       to="#" />
-    <button 
-      class="navbar-toggler sidebar-toggler d-md-down-none" 
-      type="button" 
+    <button
+      class="navbar-toggler sidebar-toggler d-md-down-none"
+      type="button"
       @click="sidebarToggle" >
       <span class="navbar-toggler-icon" />
     </button>
@@ -23,8 +23,8 @@
     <b-navbar-nav class="ml-auto">
       <b-nav-item class="d-md-down-none">
         <i class="icon-bell"/>
-        <b-badge 
-          pill 
+        <b-badge
+          pill
           variant="danger">
           5
         </b-badge>
@@ -37,9 +37,9 @@
       </b-nav-item>
       <HeaderDropdown/>
     </b-navbar-nav>
-    <button 
-      class="navbar-toggler aside-menu-toggler d-md-down-none" 
-      type="button" 
+    <button
+      class="navbar-toggler aside-menu-toggler d-md-down-none"
+      type="button"
       @click="asideToggle" >
       <span class="navbar-toggler-icon" />
     </button>

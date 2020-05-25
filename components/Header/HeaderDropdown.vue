@@ -1,63 +1,63 @@
 <template>
-  <b-nav-item-dropdown 
-    right 
+  <b-nav-item-dropdown
+    right
     no-caret >
     <template slot="button-content">
-      <img 
-        src="~static/img/avatars/6.jpg" 
-        class="img-avatar" 
+      <img
+        src="~static/img/avatars/6.jpg"
+        class="img-avatar"
         alt="admin@bootstrapmaster.com" >
     </template>
-    <b-dropdown-header 
-      tag="div" 
+    <b-dropdown-header
+      tag="div"
       class="text-center" >
       <strong>Account</strong>
     </b-dropdown-header>
     <b-dropdown-item>
-      <font-awesome-icon :icon="['far', 'bell']" /> 
+      <font-awesome-icon :icon="['far', 'bell']" />
       Updates<b-badge variant="info">{{ itemsCount }}</b-badge>
     </b-dropdown-item>
     <b-dropdown-item>
-      <font-awesome-icon :icon="['far', 'envelope']" /> 
+      <font-awesome-icon :icon="['far', 'envelope']" />
       Messages<b-badge variant="success">{{ itemsCount }}</b-badge>
     </b-dropdown-item>
     <b-dropdown-item>
-      <font-awesome-icon icon="tasks" /> 
+      <font-awesome-icon icon="tasks" />
       Tasks<b-badge variant="danger">{{ itemsCount }}</b-badge>
     </b-dropdown-item>
     <b-dropdown-item>
-      <font-awesome-icon :icon="['far', 'comments']" /> 
+      <font-awesome-icon :icon="['far', 'comments']" />
       Comments<b-badge variant="warning">{{ itemsCount }}</b-badge>
     </b-dropdown-item>
-    <b-dropdown-header 
-      tag="div" 
+    <b-dropdown-header
+      tag="div"
       class="text-center" >
       <strong>Settings</strong>
     </b-dropdown-header>
     <b-dropdown-item>
-      <font-awesome-icon :icon="['far', 'user']" /> 
+      <font-awesome-icon :icon="['far', 'user']" />
       Profile
     </b-dropdown-item>
     <b-dropdown-item>
-      <font-awesome-icon :icon="['fas', 'wrench']" /> 
+      <font-awesome-icon :icon="['fas', 'wrench']" />
       Settings
     </b-dropdown-item>
     <b-dropdown-item>
-      <font-awesome-icon :icon="['fas', 'dollar-sign']" /> 
+      <font-awesome-icon :icon="['fas', 'dollar-sign']" />
       Payments<b-badge variant="secondary">{{ itemsCount }}</b-badge>
     </b-dropdown-item>
     <b-dropdown-item>
-      <font-awesome-icon :icon="['far', 'file']" /> 
+      <font-awesome-icon :icon="['far', 'file']" />
       Projects<b-badge variant="primary">{{ itemsCount }}</b-badge>
     </b-dropdown-item>
     <b-dropdown-divider />
     <b-dropdown-item>
-      <font-awesome-icon :icon="['fas', 'shield-alt']" /> 
+      <font-awesome-icon :icon="['fas', 'shield-alt']" />
       Lock Account
     </b-dropdown-item>
     <b-dropdown-item @click="logout">
-      <font-awesome-icon :icon="['fas', 'lock']" /> 
-      Logout
+      <font-awesome-icon :icon="['fas', 'lock']" />
+      Cerrar Sesión
     </b-dropdown-item>
   </b-nav-item-dropdown>
 </template>
@@ -71,9 +71,8 @@ export default {
   methods: {
     async logout() {
       try {
-        this.$store.dispatch('logout').then(() => {
-          this.$router.push('/login')
-        })
+        await this.$store.dispatch('logout')
+        return this.$router.push('/pages/login')
       } catch (e) {
         this.formError = e.message
       }
