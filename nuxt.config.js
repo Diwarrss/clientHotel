@@ -41,13 +41,23 @@ module.exports = {
     /* Import Core SCSS */
     '@/assets/scss/style.scss',
     /* Import Custom CSS */
-    '@/assets/css/main.css'
+    '@/assets/css/main.css' /* ,
+    // If you don't need the styles, do not connect
+    '~/node_modules/sweetalert2/dist/sweetalert2.min.css' */
+    /* Import CSS PrimeVue */
+    /* { src: 'primevue/resources/primevue.min.css' },
+    { src: 'primevue/resources/themes/saga-blue/theme.css' },
+    { src: 'primeicons/primeicons.css' } */
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [],
+  plugins: [
+    //load primevue https://www.primefaces.org/primevue/showcase/#/setup
+    /* { src: '~/plugins/primevue.js', mode: 'client' } */
+    { src: '~/plugins/vue-sweetAlert.js', mode: 'client' }
+  ],
 
   /*
   ** Nuxt.js modules
@@ -58,26 +68,28 @@ module.exports = {
     // Doc: https://bootstrap-vue.js.org/docs/
     'bootstrap-vue/nuxt',
     //Auth Module
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    //vue-sweetalert2
+    'vue-sweetalert2/nuxt'
   ],
   auth: {
     // Options
     redirect: {
-      login: '/pages/login',
-      logout: '/pages/login',
-      callback: '/pages/login',
-      home: '/'
+      login: '/pages/login', //El usuario será redirigido a esta ruta si es necesario iniciar sesión .
+      logout: '/pages/login', //El usuario será redirigido a esta ruta si después de cerrar sesión, la ruta actual está protegida .
+      callback: '/pages/login', // El usuario será redirigido a esta ruta después de iniciar sesión . ( rewriteRedirectsreescribirá este camino)
+      home: '/' //El usuario será redirigido a esta ruta por el proveedor de identidad después de iniciar sesión .
     },
     strategies: {
       local: {
         endpoints: {
           login: {
-            url: 'login',
+            url: '/login',
             method: 'post',
             propertyName: false
           }, //url login laravel 7
           user: {
-            url: 'api/user',
+            url: '/api/user',
             method: 'get',
             propertyName: false
           } //url get info user auth

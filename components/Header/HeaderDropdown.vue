@@ -71,8 +71,8 @@ export default {
   methods: {
     async logout() {
       try {
-        await this.$store.dispatch('logout')
-        return this.$router.push('/pages/login')
+        await this.$auth.logout('logout')
+        this.$router.push('/pages/login')
       } catch (e) {
         this.formError = e.message
       }

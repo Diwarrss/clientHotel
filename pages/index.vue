@@ -929,6 +929,22 @@ export default {
     }
   },
   methods: {
+    /* showAlert() {
+      //Vue.swal('Hello Vue world!!!')
+      this.$swal({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#41b882',
+        cancelButtonColor: '#41b882',
+        confirmButtonText: 'Yes, delete it!'
+      }).then(result => {
+        if (result.value) {
+          Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
+        }
+      })
+    }, */
     variant(value) {
       let $variant
       if (value <= 25) {
