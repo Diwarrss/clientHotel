@@ -19,7 +19,7 @@
     "chart.js": "^2.9.3",
     "cross-env": "^5.2.1",
     "node-sass": "^4.11.0",
-    "nuxt": "^2.12.2",
+    "nuxt": "^2.15.8",
     "nuxt-sass-resources-loader": "^2.0.5",
     "nuxt-simple-line-icons": "^1.0.2",
     "nuxt-validate": "^0.1.3",
